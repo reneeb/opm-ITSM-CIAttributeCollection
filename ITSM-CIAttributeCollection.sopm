@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otrs_package version="1.1">
+    <Name>ITSM-CIAttributeCollection</Name>
+    <Version>5.0.3</Version>
+    <Vendor>c.a.p.e. IT GmbH</Vendor>
+    <URL>http://www.cape-it.de/</URL>
+    <License>GNU AFFERO GENERAL PUBLIC LICENSE Version 3, November 2007</License>
+    <ChangeLog Version="5.0.3" Date="2016-09-13 15:19:01">Bugfix: T2016052390000642 (fixed testing of invalid in all layout files).</ChangeLog>
+    <ChangeLog Version="5.0.2" Date="2016-05-18 09:41:51">CR: updated copyright year; Bugfix: T2016010690000986 (fixed issues with empty Value in Kernel::System::ITSMConfigItem::XML::Type::CIACCustomerCompany), T2014051290000603 (add class after testing of invalid and change param for ItemID), T2016031090000661 (remove important advice from IntroUpgrade).</ChangeLog>
+    <ChangeLog Version="5.0.1" Date="2016-02-12 10:24:09">Bugfix: T2016021190000938 (fixed click bind for add/remove Button for CI-search), T2016021190000536 (JS error when Key contains non-aplhanumeric symbols =&gt; added documentation note), T2016011490000621 (improved search for CustomerIDs in CustomerUserCompany), T2016011490000676 (fixed export CustomerIDs in CustomerUserCompany).</ChangeLog>
+    <ChangeLog Version="5.0.0" Date="2015-11-16 16:05:59">CR: T2015082690000571 (added framework 5.0) (tlange).</ChangeLog>
+    <ChangeLog Version="4.99.81" Date="2015-11-04 12:12:09">CR: T2015082690000571 (modifications for framework 5.0;documentation updated).</ChangeLog>
+    <ChangeLog Version="4.99.80" Date="2015-11-03 00:00:11">CR: T2015082690000571 (modifications for framework 5.0).</ChangeLog>
+    <Description Lang="en">ITSM-CIAttributeCollection - provides additional CI-attributes.</Description>
+    <Framework>5.0.x</Framework>
+    <IntroInstall Lang="en" Title="Install Information" Type="pre">
+        &lt;br/&gt;
+        &lt;strong&gt;WELCOME&lt;/strong&gt;&lt;br/&gt;
+        &lt;br/&gt;
+        You are about to install the OTRS module ITSM-CIAttributeCollection. This package provides additional CI-attribute types.&lt;br/&gt;
+        &lt;br/&gt;
+        &lt;br/&gt;
+        &lt;br/&gt;
+        &lt;strong&gt;Required OTRS Packages:&lt;/strong&gt;&lt;br/&gt;
+        &lt;ul&gt;
+        &lt;li&gt;ITSMConfigurationManagement 5.0.1 or higher&lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;br/&gt;
+        &lt;br/&gt;
+        &lt;strong&gt;Additional Required Perl Packages (for some functionality):&lt;/strong&gt;&lt;br/&gt;
+        &lt;ul&gt;
+        &lt;li&gt;Digest::MD5&lt;/li&gt;
+        &lt;li&gt;Encode&lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;/ul&gt;
+        &lt;br/&gt;
+        &lt;br/&gt;
+        &lt;strong&gt;Note:&lt;/strong&gt;&lt;br/&gt;
+        &lt;ul&gt;
+        &lt;li&gt;Package installation will overwrite the SysConfig value for Loader::Agent::CommonJS###100-ConfigurationManagement&lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;br/&gt;
+        &lt;br/&gt;
+        c.a.p.e. IT ...easy.&lt;br/&gt;
+        &lt;br/&gt;
+    </IntroInstall>
+    <IntroInstall Lang="en" Title="Installation Information" Type="post">
+        &lt;br/&gt;
+        The package has been installed. Your configuration has been changed&lt;br/&gt;
+        &lt;br/&gt;
+        &lt;br/&gt;
+        &lt;strong&gt;NOTICE&lt;/strong&gt;
+        &lt;br/&gt;
+        (1) Verify the installation and check your OTRS-SysLog.&lt;br/&gt;
+        (2) &lt;strong&gt;Please see &lt;i&gt;OTRS_HOME/doc/en/USAGE_CIAttributeCollection.pdf&lt;/i&gt; for documentation.&lt;/strong&gt;&lt;br/&gt;
+        &lt;br/&gt;
+        &lt;br/&gt;
+        &lt;br/&gt;
+        c.a.p.e. IT ...easy.&lt;br/&gt;
+        &lt;br/&gt;
+    </IntroInstall>
+    <IntroUninstall Lang="en" Title="Uninstallation Information" Type="pre">
+        &lt;br/&gt;
+        &lt;strong&gt;WELCOME&lt;/strong&gt;
+        &lt;br/&gt;
+        &lt;br/&gt;
+        You are about to UNINSTALL the ITSM-CIAttributeCollection extensions package for OTRS. Please keep in mind that any CMDB-information stored with ITSM-CIAttributeCollection specific attribute types are not lost, but cannot be viewed, edited and used anymore.&lt;br/&gt;
+        &lt;br/&gt;
+        &lt;br/&gt;
+        &lt;br/&gt;
+        c.a.p.e. IT ...easy.&lt;br/&gt;
+        &lt;br/&gt;
+    </IntroUninstall>
+    <IntroUpgrade Lang="en" Title="Upgrade Information" Type="pre">
+        &lt;br/&gt;
+        &lt;strong&gt;WELCOME&lt;/strong&gt;
+        &lt;br/&gt;
+        &lt;br/&gt;
+        You are about to upgrade the ITSM-CIAttributeCollection extensions package for OTRS.&lt;br/&gt;
+        &lt;br/&gt;
+        &lt;br/&gt;
+        &lt;strong&gt;Note:&lt;/strong&gt;&lt;br/&gt;
+        &lt;ul&gt;
+        &lt;li&gt;Package update will overwrite the SysConfig value for Loader::Agent::CommonJS###100-ConfigurationManagement&lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;br/&gt;
+
+        &lt;br/&gt;
+        c.a.p.e. IT ...easy.&lt;br/&gt;
+        &lt;br/&gt;
+    </IntroUpgrade>
+    <PackageRequired Version="5.0.1">ITSMConfigurationManagement</PackageRequired>
+    <ModuleRequired>Digest::MD5</ModuleRequired>
+    <ModuleRequired>Encode</ModuleRequired>
+    <CodeInstall Type="post">
+    $Kernel::OM-&gt;Get('var::packagesetup::ITSM_CIAttributeCollection')-&gt;CodeInstall();
+    
+    </CodeInstall>
+    <CodeUpgrade Type="post">
+    $Kernel::OM-&gt;Get('var::packagesetup::ITSM_CIAttributeCollection')-&gt;CodeUpgrade();
+    
+    </CodeUpgrade>
+    <CodeUninstall Type="pre">
+    $Kernel::OM-&gt;Get('var::packagesetup::ITSM_CIAttributeCollection')-&gt;CodeUninstall();
+    
+    </CodeUninstall>
+    <CodeReinstall Type="post">
+    $Kernel::OM-&gt;Get('var::packagesetup::ITSM_CIAttributeCollection')-&gt;CodeReinstall();
+    
+    </CodeReinstall>
+    
+    
+    <Filelist>
+        <File Location="ITSM-CIAttributeCollection.sopm" Permission="644"/>
+        <File Location="doc/CHANGES_ITSM-CIAttributeCollection.md" Permission="644"/>
+        <File Location="doc/en/ITSM-CIAttributeCollection.pdf" Permission="644"/>
+        <File Location="doc/en/USAGE_itsm-ciattributecollection.pod" Permission="644"/>
+        <File Location="Kernel/Modules/AgentCIClassSearch.pm" Permission="644"/>
+        <File Location="Kernel/Modules/AgentQueueSearch.pm" Permission="644"/>
+        <File Location="Kernel/Modules/AgentServiceSearch.pm" Permission="644"/>
+        <File Location="Kernel/Modules/AgentAttachmentStorage.pm" Permission="644"/>
+        <File Location="Kernel/Modules/AgentCustomerCompanySearch.pm" Permission="644"/>
+        <File Location="Kernel/Modules/AgentCustomerUserCompanySearch.pm" Permission="644"/>
+        <File Location="Kernel/Modules/AgentITSMCITicketSearch.pm" Permission="644"/>
+        <File Location="Kernel/Modules/AgentSLASearch.pm" Permission="644"/>
+        <File Location="Kernel/Output/HTML/Templates/Standard/AgentCIClassSearch.tt" Permission="644"/>
+        <File Location="Kernel/Output/HTML/Templates/Standard/AgentQueueSearch.tt" Permission="644"/>
+        <File Location="Kernel/Output/HTML/Templates/Standard/AgentServiceSearch.tt" Permission="644"/>
+        <File Location="Kernel/Output/HTML/Templates/Standard/AgentCustomerCompanySearch.tt" Permission="644"/>
+        <File Location="Kernel/Output/HTML/Templates/Standard/AgentCustomerUserCompanySearch.tt" Permission="644"/>
+        <File Location="Kernel/Output/HTML/Templates/Standard/AgentUserSearch.tt" Permission="644"/>
+        <File Location="Kernel/Output/HTML/Templates/Standard/AgentITSMCITicketSearch.tt" Permission="644"/>
+        <File Location="Kernel/Output/HTML/Templates/Standard/AgentSLASearch.tt" Permission="644"/>
+        <File Location="Kernel/Output/HTML/ITSMConfigItem/LayoutCIACCustomerCompany.pm" Permission="644"/>
+        <File Location="Kernel/Output/HTML/ITSMConfigItem/LayoutCustomerUserCompany.pm" Permission="644"/>
+        <File Location="Kernel/Output/HTML/ITSMConfigItem/LayoutDummyX.pm" Permission="644"/>
+        <File Location="Kernel/Output/HTML/ITSMConfigItem/LayoutDynamicField.pm" Permission="644"/>
+        <File Location="Kernel/Output/HTML/ITSMConfigItem/LayoutEncryptedText.pm" Permission="644"/>
+        <File Location="Kernel/Output/HTML/ITSMConfigItem/LayoutUser.pm" Permission="644"/>
+        <File Location="Kernel/Output/HTML/ITSMConfigItem/LayoutCIClassReference.pm" Permission="644"/>
+        <File Location="Kernel/Output/HTML/ITSMConfigItem/LayoutQueueReference.pm" Permission="644"/>
+        <File Location="Kernel/Output/HTML/ITSMConfigItem/LayoutServiceReference.pm" Permission="644"/>
+        <File Location="Kernel/Output/HTML/ITSMConfigItem/LayoutCIAttachment.pm" Permission="644"/>
+        <File Location="Kernel/Output/HTML/ITSMConfigItem/LayoutTextLink.pm" Permission="644"/>
+        <File Location="Kernel/Output/HTML/ITSMConfigItem/LayoutTicketReference.pm" Permission="644"/>
+        <File Location="Kernel/Output/HTML/ITSMConfigItem/LayoutTypeReference.pm" Permission="644"/>
+        <File Location="Kernel/Output/HTML/ITSMConfigItem/LayoutSLAReference.pm" Permission="644"/>
+        <File Location="Kernel/System/ITSMConfigItem/XML/Type/CIClassReference.pm" Permission="644"/>
+        <File Location="Kernel/System/ITSMConfigItem/XML/Type/QueueReference.pm" Permission="644"/>
+        <File Location="Kernel/System/ITSMConfigItem/XML/Type/ServiceReference.pm" Permission="644"/>
+        <File Location="Kernel/System/ITSMConfigItem/XML/Type/CIAttachment.pm" Permission="644"/>
+        <File Location="Kernel/System/ITSMConfigItem/XML/Type/CIACCustomerCompany.pm" Permission="644"/>
+        <File Location="Kernel/System/ITSMConfigItem/XML/Type/CustomerUserCompany.pm" Permission="644"/>
+        <File Location="Kernel/System/ITSMConfigItem/XML/Type/DummyX.pm" Permission="644"/>
+        <File Location="Kernel/System/ITSMConfigItem/XML/Type/DynamicField.pm" Permission="644"/>
+        <File Location="Kernel/System/ITSMConfigItem/XML/Type/User.pm" Permission="644"/>
+        <File Location="Kernel/System/ITSMConfigItem/XML/Type/EncryptedText.pm" Permission="644"/>
+        <File Location="Kernel/System/ITSMConfigItem/XML/Type/TextLink.pm" Permission="644"/>
+        <File Location="Kernel/System/ITSMConfigItem/XML/Type/TicketReference.pm" Permission="644"/>
+        <File Location="Kernel/System/ITSMConfigItem/XML/Type/TypeReference.pm" Permission="644"/>
+        <File Location="Kernel/System/ITSMConfigItem/XML/Type/SLAReference.pm" Permission="644"/>
+        <File Location="Kernel/System/ITSMConfigItem/Event/CIClassReference_RefreshLinks.pm" Permission="644"/>
+        <File Location="Kernel/System/ITSMConfigItem/Event/ServiceReference_RefreshLinks.pm" Permission="644"/>
+        <File Location="Kernel/System/ITSMConfigItem/Event/TicketReference_RefreshLinks.pm" Permission="644"/>
+        <File Location="Kernel/System/ITSMCIAttributCollectionUtils.pm" Permission="644"/>
+        <File Location="Kernel/System/CIAttachmentStorage/AttachmentStorage.pm" Permission="644"/>
+        <File Location="Kernel/System/CIAttachmentStorage/AttachmentStorageFS.pm" Permission="644"/>
+        <File Location="Kernel/System/CIAttachmentStorage/AttachmentStorageDB.pm" Permission="644"/>
+        <File Location="var/httpd/htdocs/js/Core.Agent.CIClassSearch.js" Permission="644"/>
+        <File Location="var/httpd/htdocs/js/Core.Agent.ServiceSearch.js" Permission="644"/>
+        <File Location="var/httpd/htdocs/js/Core.Agent.QueueSearch.js" Permission="644"/>
+        <File Location="var/httpd/htdocs/js/Core.Agent.CustomerCompanySearch.js" Permission="644"/>
+        <File Location="var/httpd/htdocs/js/Core.Agent.CustomerUserCompanySearch.js" Permission="644"/>
+        <File Location="var/httpd/htdocs/js/Core.Agent.UserSearch.js" Permission="644"/>
+        <File Location="var/httpd/htdocs/js/Core.Agent.ITSMCITicketSearch.js" Permission="644"/>
+        <File Location="var/httpd/htdocs/js/Core.Agent.SLASearch.js" Permission="644"/>
+        <File Location="var/httpd/htdocs/js/ITSM.Agent.ConfigItem.Search.CIAttrColl.js" Permission="644"/>
+        <File Location="Kernel/Config/Files/CIAttributeCollection.xml" Permission="644"/>
+        <File Location="Kernel/Config/Files/AttachmentStorage.xml" Permission="644"/>
+        <File Location="Kernel/Modules/AgentAttachmentStorage.pm" Permission="644"/>
+        <File Location="Kernel/Language/de_AttachmentStorage.pm" Permission="644"/>
+        <File Location="Kernel/Language/de_ITSMCIAttributeCollection.pm" Permission="644"/>
+        <File Location="var/packagesetup/ITSM_CIAttributeCollection.pm" Permission="644"/>
+    </Filelist>
+    <DatabaseInstall>
+        <TableCreate Type="post" Name="attachment_directory">
+            <Column AutoIncrement="true" Name="id" PrimaryKey="true" Required="true" Type="INTEGER"/>
+            <Column Name="storage_backend" Required="true" Size="64" Type="VARCHAR"/>
+            <Column Name="file_name" Required="false" Size="255" Type="VARCHAR"/>
+            <Column Name="file_path" Required="false" Size="4000" Type="VARCHAR"/>
+            <Column Name="create_time" Required="true" Type="DATE"/>
+            <Column Name="create_by" Required="true" Type="INTEGER"/>
+            <Column Name="change_time" Required="true" Type="DATE"/>
+            <Column Name="change_by" Required="true" Type="INTEGER"/>
+            <Index Name="index_attachment_directory_backend">
+                <IndexColumn Name="storage_backend">
+                </IndexColumn>
+            </Index>
+        </TableCreate>
+        <TableCreate Type="post" Name="attachment_dir_preferences">
+            <Column Name="attachment_directory_id" Required="true" Type="INTEGER"/>
+            <Column Name="preferences_key" Required="true" Size="150" Type="VARCHAR"/>
+            <Column Name="preferences_value" Required="false" Size="350" Type="VARCHAR"/>
+            <Index Name="attachment_dir_preferences_attachment_directory_id">
+                <IndexColumn Name="attachment_directory_id">
+                </IndexColumn>
+            </Index>
+            <ForeignKey ForeignTable="attachment_directory">
+                <Reference Foreign="id" Local="attachment_directory_id">
+                </Reference>
+            </ForeignKey>
+        </TableCreate>
+        <TableCreate Type="post" Name="attachment_storage">
+            <Column AutoIncrement="true" Name="id" PrimaryKey="true" Required="true" Type="INTEGER"/>
+            <Column Name="attachment_directory_id" Required="true" Type="INTEGER"/>
+            <Column Name="data" Required="false" Type="LONGBLOB"/>
+            <Unique>
+                                <UniqueColumn Name="attachment_directory_id"/>
+</Unique>
+            <Index Name="attachment_storage_dir_id">
+                <IndexColumn Name="attachment_directory_id">
+                </IndexColumn>
+            </Index>
+        </TableCreate>
+    </DatabaseInstall>
+    <DatabaseUpgrade>
+        <TableCreate Type="post" Name="attachment_directory" Version="1.6.80">
+            <Column AutoIncrement="true" Name="id" PrimaryKey="true" Required="true" Type="INTEGER"/>
+            <Column Name="storage_backend" Required="true" Size="64" Type="VARCHAR"/>
+            <Column Name="file_name" Required="false" Size="255" Type="VARCHAR"/>
+            <Column Name="file_path" Required="false" Size="4000" Type="VARCHAR"/>
+            <Column Name="create_time" Required="true" Type="DATE"/>
+            <Column Name="create_by" Required="true" Type="INTEGER"/>
+            <Column Name="change_time" Required="true" Type="DATE"/>
+            <Column Name="change_by" Required="true" Type="INTEGER"/>
+            <Index Name="index_attachment_directory_backend">
+                <IndexColumn Name="storage_backend">
+                </IndexColumn>
+            </Index>
+        </TableCreate>
+        <TableCreate Type="post" Name="attachment_dir_preferences" Version="1.6.80">
+            <Column Name="attachment_directory_id" Required="true" Type="INTEGER"/>
+            <Column Name="preferences_key" Required="true" Size="150" Type="VARCHAR"/>
+            <Column Name="preferences_value" Required="false" Size="350" Type="VARCHAR"/>
+            <Index Name="attachment_dir_preferences_attachment_directory_id">
+                <IndexColumn Name="attachment_directory_id">
+                </IndexColumn>
+            </Index>
+        </TableCreate>
+        <TableCreate Type="post" Name="attachment_storage" Version="1.6.80">
+            <Column AutoIncrement="true" Name="id" PrimaryKey="true" Required="true" Type="INTEGER"/>
+            <Column Name="attachment_directory_id" Required="true" Type="INTEGER"/>
+            <Column Name="data" Required="false" Type="LONGBLOB"/>
+            <Index Name="attachment_storage_dir_id">
+                <IndexColumn Name="attachment_directory_id">
+                </IndexColumn>
+            </Index>
+        </TableCreate>
+    </DatabaseUpgrade>
+    <DatabaseReinstall>
+    </DatabaseReinstall>
+    <DatabaseUninstall>
+    </DatabaseUninstall>
+</otrs_package>

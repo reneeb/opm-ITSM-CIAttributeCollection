@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <otrs_package version="1.1">
     <Name>ITSM-CIAttributeCollection</Name>
-    <Version>5.0.3</Version>
+    <Version>6.0.1</Version>
     <Vendor>c.a.p.e. IT GmbH</Vendor>
     <URL>http://www.cape-it.de/</URL>
     <License>GNU AFFERO GENERAL PUBLIC LICENSE Version 3, November 2007</License>
@@ -12,7 +12,7 @@
     <ChangeLog Version="4.99.81" Date="2015-11-04 12:12:09">CR: T2015082690000571 (modifications for framework 5.0;documentation updated).</ChangeLog>
     <ChangeLog Version="4.99.80" Date="2015-11-03 00:00:11">CR: T2015082690000571 (modifications for framework 5.0).</ChangeLog>
     <Description Lang="en">ITSM-CIAttributeCollection - provides additional CI-attributes.</Description>
-    <Framework>5.0.x</Framework>
+    <Framework>6.0.x</Framework>
     <IntroInstall Lang="en" Title="Install Information" Type="pre">
         &lt;br/&gt;
         &lt;strong&gt;WELCOME&lt;/strong&gt;&lt;br/&gt;
@@ -23,7 +23,7 @@
         &lt;br/&gt;
         &lt;strong&gt;Required OTRS Packages:&lt;/strong&gt;&lt;br/&gt;
         &lt;ul&gt;
-        &lt;li&gt;ITSMConfigurationManagement 5.0.1 or higher&lt;/li&gt;
+        &lt;li&gt;ITSMConfigurationManagement 6.0.1 or higher&lt;/li&gt;
         &lt;/ul&gt;
         &lt;br/&gt;
         &lt;br/&gt;
@@ -89,9 +89,9 @@
         c.a.p.e. IT ...easy.&lt;br/&gt;
         &lt;br/&gt;
     </IntroUpgrade>
-    <PackageRequired Version="5.0.1">ITSMConfigurationManagement</PackageRequired>
-    <ModuleRequired>Digest::MD5</ModuleRequired>
-    <ModuleRequired>Encode</ModuleRequired>
+    <PackageRequired Version="6.0.1">ITSMConfigurationManagement</PackageRequired>
+    <ModuleRequired Version="0">Digest::MD5</ModuleRequired>
+    <ModuleRequired Version="0">Encode</ModuleRequired>
     <CodeInstall Type="post">
     $Kernel::OM-&gt;Get('var::packagesetup::ITSM_CIAttributeCollection')-&gt;CodeInstall();
     
@@ -175,8 +175,8 @@
         <File Location="var/httpd/htdocs/js/Core.Agent.ITSMCITicketSearch.js" Permission="644"/>
         <File Location="var/httpd/htdocs/js/Core.Agent.SLASearch.js" Permission="644"/>
         <File Location="var/httpd/htdocs/js/ITSM.Agent.ConfigItem.Search.CIAttrColl.js" Permission="644"/>
-        <File Location="Kernel/Config/Files/CIAttributeCollection.xml" Permission="644"/>
-        <File Location="Kernel/Config/Files/AttachmentStorage.xml" Permission="644"/>
+        <File Location="Kernel/Config/Files/XML/CIAttributeCollection.xml" Permission="644"/>
+        <File Location="Kernel/Config/Files/XML/AttachmentStorage.xml" Permission="644"/>
         <File Location="Kernel/Modules/AgentAttachmentStorage.pm" Permission="644"/>
         <File Location="Kernel/Language/de_AttachmentStorage.pm" Permission="644"/>
         <File Location="Kernel/Language/de_ITSMCIAttributeCollection.pm" Permission="644"/>

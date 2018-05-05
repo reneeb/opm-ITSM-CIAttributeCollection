@@ -1,6 +1,6 @@
 # --
-# ITSM_CIAttributeCollection.pm - code run during package de-/installation
 # Copyright (C) 2006-2016 c.a.p.e. IT GmbH, http://www.cape-it.de
+# Copyright (C) 2018 Perl-Services.de, http://perl-services.de
 #
 # written/edited by
 # * Anna(dot)Litvinova(at)cape(dash)it(dot)de
@@ -20,9 +20,6 @@ package var::packagesetup::ITSM_CIAttributeCollection;
 
 use strict;
 use warnings;
-
-use vars qw(@ISA $VERSION);
-$VERSION = qw($Revision: 1.17 $) [1];
 
 our @ObjectDependencies = (
     'Kernel::System::SysConfig'
@@ -72,10 +69,12 @@ run the code install part
 sub CodeInstall {
     my ( $Self, %Param ) = @_;
 
-    $Kernel::OM->Get('Kernel::System::SysConfig')->ConfigItemUpdate(
-        Valid => 1,
-        Key   => 'Loader::Agent::CommonJS###100-ConfigurationManagement',
-        Value => ['ITSM.Agent.ConfigItem.Search.CIAttrColl.js','ITSM.UI.ConfigItemActionRow.js'],
+    $Kernel::OM->Get('Kernel::System::SysConfig')->SettingsSet(
+        Settings => [{
+            Name           => 'Loader::Agent::CommonJS###100-ConfigurationManagement',
+            EffectiveValue => ['ITSM.Agent.ConfigItem.Search.CIAttrColl.js','ITSM.UI.ConfigItemActionRow.js'],
+        }],
+        UserID => 1,
     );
 
     return 1;
@@ -125,8 +124,9 @@ run the code uninstall part
 sub CodeUninstall {
     my ( $Self, %Param ) = @_;
 
-    $Kernel::OM->Get('Kernel::System::SysConfig')->ConfigItemReset(
-        Name => 'Loader::Agent::CommonJS###100-ConfigurationManagement',
+    $Kernel::OM->Get('Kernel::System::SysConfig')->SettingReset(
+        Name   => 'Loader::Agent::CommonJS###100-ConfigurationManagement',
+        UserID => 1,
     );
 
     return 1;

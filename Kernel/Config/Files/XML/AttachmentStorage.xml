@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<otrs_config version="2.0" init="Application">
+    <CVS>$Id: AttachmentStorage.xml,v 1.5 2014/12/01 11:52:49 millinger Exp $</CVS>
+    <Setting Name="AttachmentStorage::StorageBackendModules" Required="1" Valid="1">
+        <Description Translatable="1">A list of all available CI-attachment storage backends.</Description>
+        <Navigation>Core::AttachmentStorage</Navigation>
+        <Value>
+            <Hash>
+                <Item Key="Kernel::System::CIAttachmentStorage::AttachmentStorageDB">1</Item>
+                <Item Key="Kernel::System::CIAttachmentStorage::AttachmentStorageFS">1</Item>
+            </Hash>
+        </Value>
+    </Setting>
+    <Setting Name="AttachmentStorage::DefaultStorageBackendModule" Required="1" Valid="1">
+        <Description Translatable="1">Defines the backend module used for attachment storage.</Description>
+        <Navigation>Core::AttachmentStorage</Navigation>
+        <Value>
+            <Item ValueType="String" ValueRegex="">Kernel::System::CIAttachmentStorage::AttachmentStorageDB</Item>
+        </Value>
+    </Setting>
+    <Setting Name="Frontend::Module###AgentAttachmentStorage" Required="0" Valid="1">
+        <Description Translatable="1">Frontend module registration for the CI-AgentAttachmentStorage object in the agent interface.</Description>
+        <Navigation>Core::AttachmentStorage</Navigation>
+        <Value>
+            <Item ValueType="FrontendRegistration">
+                <Hash>
+                    <Item Key="Group">
+                        <Array>
+                        </Array>
+                    </Item>
+                    <Item Key="GroupRo">
+                        <Array>
+                        </Array>
+                    </Item>
+                    <Item Key="Title"></Item>
+                    <Item Key="NavBarName">Ticket</Item>
+                    <Item Key="Description">To download attachments</Item>
+                </Hash>
+            </Item>
+        </Value>
+    </Setting>
+    <Setting Name="Frontend::Navigation###AgentAttachmentStorage###002-AttachmentStorage" Required="0" Valid="0">
+        <Description Translatable="1">Main menu item registration.</Description>
+        <Navigation>Core::AttachmentStorage</Navigation>
+        <Value>
+            <Array>
+                <DefaultItem ValueType="FrontendNavigation">
+                    <Hash>
+                    </Hash>
+                </DefaultItem>
+            </Array>
+        </Value>
+    </Setting>
+    <Setting Name="AttachmentStorageFS::StorageDirectory" Required="1" Valid="1">
+        <Description Translatable="1">The path to the directory where the file system backend stores new attachments. The path needs to be specified relative to the OTRS-Home.</Description>
+        <Navigation>Core::AttachmentStorage</Navigation>
+        <Value>
+            <Item ValueType="String" ValueRegex="">/var/attachments</Item>
+        </Value>
+     </Setting>
+    <Setting Name="ITSMCIAttributeCollection::AttachmentMD5Check" Required="1" Valid="1">
+        <Description Translatable="1">Enables md5 content check for uploaded CI-attachment content.</Description>
+        <Navigation>Core::AttachmentStorage</Navigation>
+        <Value>
+            <Item ValueType="Checkbox">1</Item>
+        </Value>
+    </Setting>
+    <Setting Name="ITSMCIAttributeCollection::AttachmentSizeCheck" Required="1" Valid="1">
+        <Description Translatable="1">Enables size check for uploaded CI-attachments.</Description>
+        <Navigation>Core::AttachmentStorage</Navigation>
+        <Value>
+            <Item ValueType="Checkbox">1</Item>
+        </Value>
+    </Setting>
+</otrs_config>

@@ -90,18 +90,12 @@
             <Item ValueType="FrontendRegistration">
                 <Hash>
                     <Item Key="Group">
-                        <Array>
-                        </Array>
                     </Item>
                     <Item Key="GroupRo">
-                        <Array>
-                        </Array>
                     </Item>
                     <Item Key="Description">Lookup of tickets, used for autocompletion</Item>
                     <Item Key="Title">ITSMCITicketSearch</Item>
-    <!--
                     <Item Key="NavBarName">Config Item</Item>
-    -->
                 </Hash>
             </Item>
         </Value>
@@ -125,18 +119,12 @@
             <Item ValueType="FrontendRegistration">
                 <Hash>
                     <Item Key="Group">
-                        <Array>
-                        </Array>
                     </Item>
                     <Item Key="GroupRo">
-                        <Array>
-                        </Array>
                     </Item>
                     <Item Key="Description">Lookup of queues, used for autocompletion</Item>
                     <Item Key="Title">QueueSearch</Item>
-    <!--
                     <Item Key="NavBarName">Config Item</Item>
-    -->
                 </Hash>
             </Item>
         </Value>
@@ -160,18 +148,12 @@
             <Item ValueType="FrontendRegistration">
                 <Hash>
                     <Item Key="Group">
-                        <Array>
-                        </Array>
                     </Item>
                     <Item Key="GroupRo">
-                        <Array>
-                        </Array>
                     </Item>
                     <Item Key="Description">Lookup of users, used for autocompletion</Item>
                     <Item Key="Title">AgentUserSearch</Item>
-    <!--
                     <Item Key="NavBarName">Config Item</Item>
-    -->
                 </Hash>
             </Item>
         </Value>
@@ -183,18 +165,12 @@
             <Item ValueType="FrontendRegistration">
                 <Hash>
                     <Item Key="Group">
-                        <Array>
-                        </Array>
                     </Item>
                     <Item Key="GroupRo">
-                        <Array>
-                        </Array>
                     </Item>
                     <Item Key="Description">Lookup of services, used for autocompletion</Item>
                     <Item Key="Title">ServiceSearch</Item>
-    <!--
                     <Item Key="NavBarName">Config Item</Item>
-    -->
                 </Hash>
             </Item>
         </Value>
@@ -251,18 +227,12 @@
             <Item ValueType="FrontendRegistration">
                 <Hash>
                     <Item Key="Group">
-                        <Array>
-                        </Array>
                     </Item>
                     <Item Key="GroupRo">
-                        <Array>
-                        </Array>
                     </Item>
                     <Item Key="Description">Lookup of customer companies, used for autocompletion</Item>
                     <Item Key="Title">CIACCustomerCompanySearch</Item>
-    <!--
                     <Item Key="NavBarName">Config Item</Item>
-    -->
                 </Hash>
             </Item>
         </Value>
@@ -286,18 +256,12 @@
             <Item ValueType="FrontendRegistration">
                 <Hash>
                     <Item Key="Group">
-                        <Array>
-                        </Array>
                     </Item>
                     <Item Key="GroupRo">
-                        <Array>
-                        </Array>
                     </Item>
                     <Item Key="Description">Lookup of customer user companies, used for autocompletion</Item>
                     <Item Key="Title">CustomerUserCompanySearch</Item>
-    <!--
                     <Item Key="NavBarName">Config Item</Item>
-    -->
                 </Hash>
             </Item>
         </Value>
@@ -321,18 +285,12 @@
             <Item ValueType="FrontendRegistration">
                 <Hash>
                     <Item Key="Group">
-                        <Array>
-                        </Array>
                     </Item>
                     <Item Key="GroupRo">
-                        <Array>
-                        </Array>
                     </Item>
                     <Item Key="Description">Lookup of CI classes, used for autocompletion</Item>
                     <Item Key="Title">CIClassSearch</Item>
-    <!--
                     <Item Key="NavBarName">Config Item</Item>
-    -->
                 </Hash>
             </Item>
         </Value>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <otrs_package version="1.1">
     <Name>ITSM-CIAttributeCollection</Name>
-    <Version>6.0.1</Version>
+    <Version>6.0.2</Version>
     <Vendor>c.a.p.e. IT GmbH</Vendor>
     <URL>http://www.cape-it.de/</URL>
     <License>GNU AFFERO GENERAL PUBLIC LICENSE Version 3, November 2007</License>

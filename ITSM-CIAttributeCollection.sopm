@@ -111,7 +111,6 @@
     
     
     <Filelist>
-        <File Location="ITSM-CIAttributeCollection.sopm" Permission="644"/>
         <File Location="doc/CHANGES_ITSM-CIAttributeCollection.md" Permission="644"/>
         <File Location="doc/en/ITSM-CIAttributeCollection.pdf" Permission="644"/>
         <File Location="doc/en/USAGE_itsm-ciattributecollection.pod" Permission="644"/>

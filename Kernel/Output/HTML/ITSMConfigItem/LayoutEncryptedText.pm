@@ -100,16 +100,19 @@ sub OutputStringCreate {
     }
 
     my $Access = 0;
-    for my $Group (@Groups) {
-
-        next
-            if (
-            !$Self->{LayoutObject}->{"UserIsGroup[$Group]"}
-            || $Self->{LayoutObject}->{"UserIsGroup[$Group]"} ne 'Yes'
+    my $GroupObject = $Kernel::OM->Get('Kernel::System::Group');
+    if (@Groups) {
+        $Access = 0;
+        for my $Group (@Groups) {
+            my $HasPermission = $GroupObject->PermissionCheck(
+                UserID    => $Self->{UserID},
+                GroupName => $Group,
+                Type      => 'rw',
             );
-
-        $Access = 1;
-        last;
+            if ($HasPermission) {
+                $Access = 1;
+            }
+        }
     }
 
     if ($Access) {
@@ -187,16 +190,19 @@ sub FormDataGet {
     }
 
     my $Access = 0;
-    for my $Group (@Groups) {
-
-        next
-            if (
-            !$Self->{LayoutObject}->{"UserIsGroup[$Group]"}
-            || $Self->{LayoutObject}->{"UserIsGroup[$Group]"} ne 'Yes'
+    my $GroupObject = $Kernel::OM->Get('Kernel::System::Group');
+    if (@Groups) {
+        $Access = 0;
+        for my $Group (@Groups) {
+            my $HasPermission = $GroupObject->PermissionCheck(
+                UserID    => $Self->{UserID},
+                GroupName => $Group,
+                Type      => 'rw',
             );
-
-        $Access = 1;
-        last;
+            if ($HasPermission) {
+                $Access = 1;
+            }
+        }
     }
     if ( $Access && defined( $FormData{Value} ) ) {
 
@@ -271,16 +277,19 @@ sub InputCreate {
     }
 
     my $Access = 0;
-    for my $Group (@Groups) {
-
-        next
-            if (
-            !$Self->{LayoutObject}->{"UserIsGroup[$Group]"}
-            || $Self->{LayoutObject}->{"UserIsGroup[$Group]"} ne 'Yes'
+    my $GroupObject = $Kernel::OM->Get('Kernel::System::Group');
+    if (@Groups) {
+        $Access = 0;
+        for my $Group (@Groups) {
+            my $HasPermission = $GroupObject->PermissionCheck(
+                UserID    => $Self->{UserID},
+                GroupName => $Group,
+                Type      => 'rw',
             );
-
-        $Access = 1;
-        last;
+            if ($HasPermission) {
+                $Access = 1;
+            }
+        }
     }
 
     # check if value can be edited and if so decrypt value

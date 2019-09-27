@@ -62,6 +62,7 @@ sub new {
     $Self->{LayoutObject}   = $Kernel::OM->Get('Kernel::Output::HTML::Layout');
     $Self->{LogObject}      = $Kernel::OM->Get('Kernel::System::Log');
     $Self->{ParamObject}    = $Kernel::OM->Get('Kernel::System::Web::Request');
+    $Self->{UserID}         = $Param{UserID};
 
     return $Self;
 }

@@ -1,29 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<otrs_package version="1.1">
+<otobo_package version="1.1">
     <Name>ITSM-CIAttributeCollection</Name>
-    <Version>6.0.4</Version>
+    <Version>10.0.4</Version>
     <Vendor>Perl-Services.de (original vendor: c.a.p.e. IT GmbH)</Vendor>
     <URL>https://www.perl-services.de/</URL>
     <License>GNU AFFERO GENERAL PUBLIC LICENSE Version 3, November 2007</License>
-    <ChangeLog Version="5.0.3" Date="2016-09-13 15:19:01">Bugfix: T2016052390000642 (fixed testing of invalid in all layout files).</ChangeLog>
-    <ChangeLog Version="5.0.2" Date="2016-05-18 09:41:51">CR: updated copyright year; Bugfix: T2016010690000986 (fixed issues with empty Value in Kernel::System::ITSMConfigItem::XML::Type::CIACCustomerCompany), T2014051290000603 (add class after testing of invalid and change param for ItemID), T2016031090000661 (remove important advice from IntroUpgrade).</ChangeLog>
-    <ChangeLog Version="5.0.1" Date="2016-02-12 10:24:09">Bugfix: T2016021190000938 (fixed click bind for add/remove Button for CI-search), T2016021190000536 (JS error when Key contains non-aplhanumeric symbols =&gt; added documentation note), T2016011490000621 (improved search for CustomerIDs in CustomerUserCompany), T2016011490000676 (fixed export CustomerIDs in CustomerUserCompany).</ChangeLog>
-    <ChangeLog Version="5.0.0" Date="2015-11-16 16:05:59">CR: T2015082690000571 (added framework 5.0) (tlange).</ChangeLog>
-    <ChangeLog Version="4.99.81" Date="2015-11-04 12:12:09">CR: T2015082690000571 (modifications for framework 5.0;documentation updated).</ChangeLog>
-    <ChangeLog Version="4.99.80" Date="2015-11-03 00:00:11">CR: T2015082690000571 (modifications for framework 5.0).</ChangeLog>
     <Description Lang="en">ITSM-CIAttributeCollection - provides additional CI-attributes.</Description>
-    <Framework>6.0.x</Framework>
+    <Framework>10.0.x</Framework>
     <IntroInstall Lang="en" Title="Install Information" Type="pre">
         &lt;br/&gt;
         &lt;strong&gt;WELCOME&lt;/strong&gt;&lt;br/&gt;
         &lt;br/&gt;
-        You are about to install the OTRS module ITSM-CIAttributeCollection. This package provides additional CI-attribute types.&lt;br/&gt;
+        You are about to install the OTOBO module ITSM-CIAttributeCollection. This package provides additional CI-attribute types.&lt;br/&gt;
         &lt;br/&gt;
         &lt;br/&gt;
         &lt;br/&gt;
-        &lt;strong&gt;Required OTRS Packages:&lt;/strong&gt;&lt;br/&gt;
+        &lt;strong&gt;Required OTOBO Packages:&lt;/strong&gt;&lt;br/&gt;
         &lt;ul&gt;
-        &lt;li&gt;ITSMConfigurationManagement 6.0.1 or higher&lt;/li&gt;
+        &lt;li&gt;ITSMConfigurationManagement 10.0.1 or higher&lt;/li&gt;
         &lt;/ul&gt;
         &lt;br/&gt;
         &lt;br/&gt;
@@ -41,7 +35,7 @@
         &lt;/ul&gt;
         &lt;br/&gt;
         &lt;br/&gt;
-        c.a.p.e. IT ...easy.&lt;br/&gt;
+        Perl-Services.de&lt;br/&gt;
         &lt;br/&gt;
     </IntroInstall>
     <IntroInstall Lang="en" Title="Installation Information" Type="post">
@@ -51,12 +45,11 @@
         &lt;br/&gt;
         &lt;strong&gt;NOTICE&lt;/strong&gt;
         &lt;br/&gt;
-        (1) Verify the installation and check your OTRS-SysLog.&lt;br/&gt;
-        (2) &lt;strong&gt;Please see &lt;i&gt;OTRS_HOME/doc/en/USAGE_CIAttributeCollection.pdf&lt;/i&gt; for documentation.&lt;/strong&gt;&lt;br/&gt;
+        (1) Verify the installation and check your OTOBO-SysLog.&lt;br/&gt;
         &lt;br/&gt;
         &lt;br/&gt;
         &lt;br/&gt;
-        c.a.p.e. IT ...easy.&lt;br/&gt;
+        Perl-Services.de&lt;br/&gt;
         &lt;br/&gt;
     </IntroInstall>
     <IntroUninstall Lang="en" Title="Uninstallation Information" Type="pre">
@@ -64,11 +57,11 @@
         &lt;strong&gt;WELCOME&lt;/strong&gt;
         &lt;br/&gt;
         &lt;br/&gt;
-        You are about to UNINSTALL the ITSM-CIAttributeCollection extensions package for OTRS. Please keep in mind that any CMDB-information stored with ITSM-CIAttributeCollection specific attribute types are not lost, but cannot be viewed, edited and used anymore.&lt;br/&gt;
+        You are about to UNINSTALL the ITSM-CIAttributeCollection extensions package for OTOBO. Please keep in mind that any CMDB-information stored with ITSM-CIAttributeCollection specific attribute types are not lost, but cannot be viewed, edited and used anymore.&lt;br/&gt;
         &lt;br/&gt;
         &lt;br/&gt;
         &lt;br/&gt;
-        c.a.p.e. IT ...easy.&lt;br/&gt;
+        Perl-Services.de.&lt;br/&gt;
         &lt;br/&gt;
     </IntroUninstall>
     <IntroUpgrade Lang="en" Title="Upgrade Information" Type="pre">
@@ -76,7 +69,7 @@
         &lt;strong&gt;WELCOME&lt;/strong&gt;
         &lt;br/&gt;
         &lt;br/&gt;
-        You are about to upgrade the ITSM-CIAttributeCollection extensions package for OTRS.&lt;br/&gt;
+        You are about to upgrade the ITSM-CIAttributeCollection extensions package for OTOBO.&lt;br/&gt;
         &lt;br/&gt;
         &lt;br/&gt;
         &lt;strong&gt;Note:&lt;/strong&gt;&lt;br/&gt;
@@ -86,10 +79,10 @@
         &lt;br/&gt;
 
         &lt;br/&gt;
-        c.a.p.e. IT ...easy.&lt;br/&gt;
+        Perl-Services.de.&lt;br/&gt;
         &lt;br/&gt;
     </IntroUpgrade>
-    <PackageRequired Version="6.0.1">ITSMConfigurationManagement</PackageRequired>
+    <PackageRequired Version="10.0.1">ITSMConfigurationManagement</PackageRequired>
     <ModuleRequired Version="0">Digest::MD5</ModuleRequired>
     <ModuleRequired Version="0">Encode</ModuleRequired>
     <CodeInstall Type="post">
@@ -111,8 +104,6 @@
     
     
     <Filelist>
-        <File Location="doc/CHANGES_ITSM-CIAttributeCollection.md" Permission="644"/>
-        <File Location="doc/en/ITSM-CIAttributeCollection.pdf" Permission="644"/>
         <File Location="doc/en/USAGE_itsm-ciattributecollection.pod" Permission="644"/>
         <File Location="Kernel/Modules/AgentCIClassSearch.pm" Permission="644"/>
         <File Location="Kernel/Modules/AgentQueueSearch.pm" Permission="644"/>
@@ -260,4 +251,4 @@
     </DatabaseReinstall>
     <DatabaseUninstall>
     </DatabaseUninstall>
-</otrs_package>
+</otobo_package>

@@ -2,7 +2,7 @@
 
 =head1 Usage Information
 
-This package provides additional ITSM-CI-attributes for OTRS:ITSM, i.e. ITSMConfigurationManagement. Following you'll find a short documentation on the use and features of this extension.
+This package provides additional ITSM-CI-attributes for OTOBO::ITSM, i.e. ITSMConfigurationManagement. Following you'll find a short documentation on the use and features of this extension.
 
 Please read the PDF-documentation included in this package for more information.
 
@@ -35,33 +35,40 @@ Virtual file system proved to be not suitable, since it builds some sort of dire
 
 =item * attribute definition requires three additional attributes:
 
-        ReferencedCIClassName or ReferencedCIClassID: defines the referenced CI-class
-        ReferencedCIClassLinkType: defines the link type which should be used for automatic link creation and deletion, no link will be created if empty
-        ReferencedCIClassLinkDirection: set to "Reverse" if you want to create a reverse link for directed link types (will only be relevant if ReferencedCIClassLinkType is set)
-        ReferencedCIClassReferenceAttributeKey: defines the referenced attribute key which should be used as identifier during the import.
-        SearchInputType: defines the input type for the cmdb search mask. Can be 'AutoComplete' or 'Pattern'. If nothing or something wrong is set, 'AutoComplete' is used. 'Pattern' allows to search for several relevant configitems by name (* allowed as wildcard), by number (starts with '[Number]' followed by digest. * allowed as wildcard) and by id (starts with '[ID]' followed by digest). Multiple entries can be separated by '||'.
+=over 4
+
+=item * ReferencedCIClassName or ReferencedCIClassID: defines the referenced CI-class
+
+=item * ReferencedCIClassLinkType: defines the link type which should be used for automatic link creation and deletion, no link will be created if empty
+
+=item * ReferencedCIClassLinkDirection: set to "Reverse" if you want to create a reverse link for directed link types (will only be relevant if ReferencedCIClassLinkType is set)
+
+=item * ReferencedCIClassReferenceAttributeKey: defines the referenced attribute key which should be used as identifier during the import.
+
+=item * SearchInputType: defines the input type for the cmdb search mask. Can be 'AutoComplete' or 'Pattern'. If nothing or something wrong is set, 'AutoComplete' is used. 'Pattern' allows to search for several relevant configitems by name (* allowed as wildcard), by number (starts with '[Number]' followed by digest. * allowed as wildcard) and by id (starts with '[ID]' followed by digest). Multiple entries can be separated by '||'.
+
+=back
 
 =item * IMPORTANT NOTE: The "Key" attribute has to be a UNIQUE name within the class definition!
+
 =item * IMPORTANT NOTE: Do NOT use non-alphanumeric characters in "Key" attribute!
+
 =item * IMPORTANT NOTE: If the CI will be edited using the edit-dialog all Links of the defined type will be deleted and set according to the CI-Attribute.
 
 =back
 
 =head3 EXAMPLE
 
-    {
-        Key        => 'Location',
-        Name       => 'Asset Location',
-        Searchable => 1,
-        Input => {
-            Type                           => 'CIClassReference',
-            ReferencedCIClassName          => 'Location',
-            ReferencedCIClassLinkType      => 'Includes',
-            ReferencedCIClassLinkDirection => 'Reverse',
-            ReferencedCIClassReferenceAttributeKey => 'SerialNumber',
-            SearchInputType                => 'AutoComplete',
-        },
-    },
+    - Key: Location
+      Name: Asset Location
+      Searchable: 1
+      Input:
+        Type: CIClassReference
+        ReferencedCIClassName: Location
+        ReferencedCIClassLinkType: Includes
+        ReferencedCIClassLinkDirection: Reverse
+        ReferencedCIClassReferenceAttributeKey: SerialNumber
+        SearchInputType: AutoComplete
 
 
 =head2 (ii) Use of the CI-Attribute "ServiceReference"
@@ -74,8 +81,13 @@ Virtual file system proved to be not suitable, since it builds some sort of dire
 
 =item * attribute definition requires two additional attributes:
 
-        ReferencedServiceLinkType: defines the link type which should be used for automatic link creation and deletion, no link will be created if empty
-        ReferencedServiceLinkDirection: set to "Reverse" if you want to create a reverse link for directed link types (will only be relevant if ReferencedServiceLinkType is set)
+=over 4
+
+=item * ReferencedServiceLinkType: defines the link type which should be used for automatic link creation and deletion, no link will be created if empty
+
+=item * ReferencedServiceLinkDirection: set to "Reverse" if you want to create a reverse link for directed link types (will only be relevant if ReferencedServiceLinkType is set)
+
+=back
 
 =item * IMPORTANT NOTE: If the CI will be edited using the edit-dialog all Links of the defined type will be deleted and set according to the CI-Attribute
 
@@ -87,17 +99,13 @@ Virtual file system proved to be not suitable, since it builds some sort of dire
 
 =head3 EXAMPLE:
 
-    {
-        Key        => 'AssignedService',
-        Name       => 'Assigned Service',
-        Searchable => 1,
-        Input => {
-            Type                            => 'ServiceReference',
-            ReferencedServiceLinkType       => 'RelevantTo',
-            ReferencedServiceLinkDirection  => 'Normal',
-        },
-    },
-
+    - Key: AssignedService
+      Name: Assigned Service
+      Searchable: 1
+      Input:
+        Type: ServiceReference
+        ReferencedServiceLinkType: RelevantTo
+        ReferencedServiceLinkDirection: Normal
 
 =head2 (iii) Use of the CI-Attribute "QueueReference"
 
@@ -109,14 +117,11 @@ Virtual file system proved to be not suitable, since it builds some sort of dire
 
 =head3  EXAMPLE:
 
-    {
-        Key        => 'AssignedQueue',
-        Name       => 'Assigned Queue',
-        Searchable => 1,
-        Input => {
-            Type => 'QueueReference',
-        },
-    },
+    - Key: AssignedQueue
+      Name: Assigned Queue
+      Searchable: 1
+      Input:
+        Type: QueueReference
 
 =head2 (iv) Use of the CI-Attribute "CIAttachment"
 
@@ -126,12 +131,21 @@ Virtual file system proved to be not suitable, since it builds some sort of dire
 
 =item * see following SysConfig options for further configuration
 
-    AttachmentStorage::StorageBackendModules
-    AttachmentStorage::DefaultStorageBackendModule
-    Frontend::Module###AgentAttachmentStorage
-    AttachmentStorageFS::StorageDirectory
-    ITSMCIAttributeCollection::AttachementMD5Check
-	ITSMCIAttributeCollection::AttachementSizeCheck
+=over 4
+
+=item * AttachmentStorage::StorageBackendModules
+
+=item * AttachmentStorage::DefaultStorageBackendModule
+
+=item * Frontend::Module###AgentAttachmentStorage
+
+=item * AttachmentStorageFS::StorageDirectory
+
+=item * ITSMCIAttributeCollection::AttachementMD5Check
+
+=item * ITSMCIAttributeCollection::AttachementSizeCheck
+
+=back
 
 =item * IMPORTANT NOTE: The attributes CountMin and CountMax must always be defined! Otherwise you won't be able to delete attachments from CIs. If you set CountMin => 1, it will be impossible to delete the last attachment (the last n attachments for CountMin => n).
 
@@ -141,18 +155,15 @@ Virtual file system proved to be not suitable, since it builds some sort of dire
 
 =head3  EXAMPLE:
 
-    {
-        Key        => 'Attachment',
-        Name       => 'Attachment',
-        Searchable => 1,
-        Input => {
-            Size      => 50,
-            MaxLength => 50,
-            Type      => 'CIAttachment',
-        },
-        CountMin => 0,
-        CountMax => 1,
-    },
+    - Key: Attachment
+      Name: Attachment
+      Searchable: 1
+      Input:
+        Size: 50
+        MaxLength: 50
+        Type: CIAttachment
+      CountMin: 0
+      CountMax: 1
 
 =head2 (v) Use of the CI-Attribute "User"
 
@@ -164,15 +175,11 @@ Virtual file system proved to be not suitable, since it builds some sort of dire
 
 =head3  EXAMPLE:
 
-    {
-        Key        => 'Responsible',
-        Name       => 'Responsible',
-        Searchable => 1,
-        Input => {
-            Type => 'User',
-        },
-    },
-
+    - Key: Responsible
+      Name: Responsible
+      Searchable: 1
+      Input:
+        Type: User
 
 =head2 (vi) Use of the CI-Attribute "CustomerUserCompany"
 
@@ -186,15 +193,11 @@ Virtual file system proved to be not suitable, since it builds some sort of dire
 
 =head3  EXAMPLE:
 
-    {
-        Key        => 'CustomerUserCompany',
-        Name       => 'CustomerUserCompany',
-        Searchable => 1,
-        Input => {
-            Type => 'CustomerUserCompany',
-        },
-    },
-
+    - Key: CustomerUserCompany
+      Name: CustomerUserCompany
+      Searchable: 1
+      Input:
+        Type: CustomerUserCompany
 
 =head2 (vii) Use of the CI-Attribute "CIACCustomerCompany" (f.k.a. "CustomerCompany")
 
@@ -210,15 +213,11 @@ Virtual file system proved to be not suitable, since it builds some sort of dire
 
 =head3  EXAMPLE:
 
-    {
-        Key        => 'CustomerCompany',
-        Name       => 'CustomerCompany',
-        Searchable => 1,
-        Input => {
-            Type => 'CIACCustomerCompany',
-        },
-    },
-
+    - Key: CustomerCompany
+      Name: CustomerCompany
+      Searchable: 1
+      Input:
+        Type: CIACCustomerCompany
 
 =head2 (viii) Use of the CI-Attribute "EncryptedText"
 
@@ -232,19 +231,15 @@ Virtual file system proved to be not suitable, since it builds some sort of dire
 
 =head3  EXAMPLE:
 
-    {
-         Key   => 'Password',
-         Name  => 'Password',
-         Group => {
-                 admin => 1,
-                 groupname => 1,
-         },
-         Input => {
-             Type      => 'EncryptedText',
-             Size      => 50,
-             MaxLength => 100,
-         },
-     },
+    - Key: Password
+      Name: Password
+      Group:
+        admin: 1
+        groupname: 1
+      Input:
+        Type: EncryptedText
+        Size: 50
+        MaxLength: 100
 
 =head2 (ix) Use of the CI-Attribute "LinkText"
 
@@ -262,17 +257,14 @@ Virtual file system proved to be not suitable, since it builds some sort of dire
 
 =head3  EXAMPLE:
 
-    {
-        Key        => 'TextLink',
-        Name       => 'Text Link',
-        Searchable => 1,
-        Input => {
-            Type      => 'TextLink',
-            Size      => 50,
-            MaxLength => 100,
-            URL       => 'http://www.example.com/<VALUE>',
-        },
-    },
+    - Key: TextLink
+      Name: Text Link
+      Searchable: 1
+      Input:
+          Type: TextLink
+          Size: 50
+          MaxLength: 100
+          URL: http://www.example.com/<VALUE>
 
 =head2 (x) Use of the CI-Attribute "DynamicField"
 
@@ -285,17 +277,13 @@ Virtual file system proved to be not suitable, since it builds some sort of dire
 
 =head3  EXAMPLE:
 
-    {
-        Key => 'Impact',
-        Name => 'Impact',
-        Searchable => 1,
-        Input => {
-            Type => 'DynamicField',
-            Name => 'TicketFreeText14',
-            Translation =>1,
-        },
-    },
-
+    - Key: Impact
+      Name: Impact
+      Searchable: 1
+      Input:
+        Type: DynamicField
+        Name: TicketFreeText14
+        Translation:1
 
 =head2 (xi) Use of the CI-Attribute "TicketReference"
 
@@ -309,8 +297,13 @@ Virtual file system proved to be not suitable, since it builds some sort of dire
 
 =item * attribute definition requires two additional attributes:
 
-        ReferencedTicketLinkType: defines the link type which should be used for automatic link creation and deletion, no link will be created if empty
-        ReferencedTicketLinkDirection: set to "Reverse" if you want to create a reverse link for directed link types (will only be relevant if ReferencedTicketLinkType is set)
+=over 4
+
+=item * ReferencedTicketLinkType: defines the link type which should be used for automatic link creation and deletion, no link will be created if empty
+
+=item * ReferencedTicketLinkDirection: set to "Reverse" if you want to create a reverse link for directed link types (will only be relevant if ReferencedTicketLinkType is set)
+
+=back
 
 =item * IMPORTANT NOTE: The "Key" attribute has to be a UNIQUE name within the class definition!
 
@@ -318,16 +311,13 @@ Virtual file system proved to be not suitable, since it builds some sort of dire
 
 =head3 EXAMPLE:
 
-    {
-        Key        => 'RelatedTicket',
-        Name       => 'Related Ticket',
-        Searchable => 1,
-        Input => {
-            Type                           => 'TicketReference',
-            ReferencedTicketLinkType       => 'RelevantTo',
-            ReferencedTicketLinkDirection  => 'Normal',
-        },
-    },
+    - Key: RelatedTicket
+      Name: Related Ticket
+      Searchable: 1
+      Input:
+        Type: TicketReference
+        ReferencedTicketLinkType: RelevantTo
+        ReferencedTicketLinkDirection: Normal
 
 =head2 (xii) Use of the CI-Attribute "TypeReference"
 
@@ -339,14 +329,11 @@ Virtual file system proved to be not suitable, since it builds some sort of dire
 
 =head3 EXAMPLE:
 
-    {
-        Key        => 'TicketType',
-        Name       => 'Ticket Type',
-        Searchable => 1,
-        Input => {
-            Type  => 'TypeReference',
-        },
-    },
+    - Key: TicketType
+      Name: Ticket Type
+      Searchable: 1
+      Input:
+        Type: TypeReference
 
 =head2 (xiii) Use of the CI-Attribute "SLAReference"
 
@@ -356,9 +343,15 @@ Virtual file system proved to be not suitable, since it builds some sort of dire
 
 =item * additional (optional) attributes:
 
-        ReferencedServiceAttrKey: defines dependency to an attribute of type "ServiceReference" form the current CI Class Definition. If configured, the value of the attribute with the given key will be used to filter the SLAs: Only SLAs that are configured for the given Service will be shown.
-        ReferencedCustomerLogin: defines dependency to an attribute of type "Customer" form the current CI Class Definition. If configured, the value of the attribute with the given key will be used to filter the SLAs: Only SLAs for the Services that are available for the given customer will be shown.
-        ReferencedCustomerCompany: defines dependency to an attribute of type "CIACCustomerCompany" form the current CI Class Definition. If configured, the value of the attribute with the given key will be used to filter the SLAs: Only SLAs available for the given CustomerID will be shown.
+=over 4
+
+=item * ReferencedServiceAttrKey: defines dependency to an attribute of type "ServiceReference" form the current CI Class Definition. If configured, the value of the attribute with the given key will be used to filter the SLAs: Only SLAs that are configured for the given Service will be shown.
+
+=item * ReferencedCustomerLogin: defines dependency to an attribute of type "Customer" form the current CI Class Definition. If configured, the value of the attribute with the given key will be used to filter the SLAs: Only SLAs for the Services that are available for the given customer will be shown.
+
+=item * ReferencedCustomerCompany: defines dependency to an attribute of type "CIACCustomerCompany" form the current CI Class Definition. If configured, the value of the attribute with the given key will be used to filter the SLAs: Only SLAs available for the given CustomerID will be shown.
+
+=back
 
 =item * IMPORTANT NOTE: If the referenced field does not exist or is empty, no SLAs will be found and only SLAs that are configured for DEFAULT services will be shown.
 
@@ -372,48 +365,39 @@ Virtual file system proved to be not suitable, since it builds some sort of dire
 
 =head3 EXAMPLE:
 
-    {
-        Key => 'ResponsibleUser',
-        Name => 'Responsible User',
-        Searchable => 1,
-        Input => {
-            Type => 'Customer',
-        },
-    }
-    {
-        Key        => 'AssignedService',
-        Name       => 'Assigned Service',
-        Searchable => 1,
-        Input => {
-            Type                            => 'ServiceReference',
-            ReferencedServiceLinkType       => 'RelevantTo',
-            ReferencedServiceLinkDirection  => 'Normal',
-        },
-        CountMin => 0,
-        CountMax => 10,
-        CountDefault => 1,
-        Sub => [
-            {
-                Key        => 'AssignedSLA',
-                Name       => 'Assigned SLA',
-                Searchable => 1,
-                Input => {
-                    Type                      => 'SLAReference',
-                    ReferencedServiceAttrKey  => 'AssignedService',
-                    ReferencedCustomerLogin   => 'ResponsibleUser',
-                },
-                CountMin => 0,
-                CountMax => 10,
-             CountDefault => 0,
-            },
-        ],
-    },
+    - Key: ResponsibleUser
+      Name: Responsible User
+      Searchable: 1
+      Input:
+          Type: Customer
 
-
+    - Key: AssignedService
+      Name: Assigned Service
+      Searchable: 1
+      Input:
+        Type: ServiceReference
+        ReferencedServiceLinkType: RelevantTo
+        ReferencedServiceLinkDirection: Normal
+      CountMin: 0
+      CountMax: 10
+      CountDefault: 1
+      Sub:
+        - Key: AssignedSLA
+          Name: Assigned SLA
+          Searchable: 1
+          Input: {
+            Type: SLAReference
+            ReferencedServiceAttrKey: AssignedService
+            ReferencedCustomerLogin: ResponsibleUser
+          CountMin: 0
+          CountMax: 10
+          CountDefault: 0
 
 =head1 COPYRIGHT
 
 Copyright (C) 2006-2016 c.a.p.e. IT GmbH, http://www.cape-it.de/
+
+Copyright (C) 2017-2021 Perl-Services.de, https://www.perl-services.de/
 
 The following persons have contributed to this extension:
 

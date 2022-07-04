@@ -1,6 +1,7 @@
 // --
 // ITSM.Agent.ConfigItem.Search.CIAttrColl.js - provides the special module functions for the global search
-// Copyright (C) 2001-2019 OTRS AG, https://otrs.com/
+// Copyright (C) 2001-2020 OTRS AG, https://otrs.com/
+// Copyright (C) 2019-2021 Rother OSS GmbH, https://otobo.de/
 // Extensions Copyright (C) 2006-2016 c.a.p.e. IT GmbH, http://www.cape-it.de
 // --
 // This software comes with ABSOLUTELY NO WARRANTY. For details, see
@@ -199,33 +200,6 @@ ITSM.Agent.ConfigItem.Search = (function (TargetNS) {
         $Element.prev().prev().remove();
         $Element.prev().remove();
         $Element.remove();
-    };
-
-    /**
-     * @function
-     * @return nothing
-     *      This function rebuild attribute selection, only show available attributes.
-     */
-    TargetNS.AdditionalAttributeSelectionRebuild = function () {
-
-        // get original selection
-        var $AttributeClone = $('#AttributeOrig').clone();
-        $AttributeClone.attr('id', 'Attribute');
-
-        // strip all already used attributes
-        $AttributeClone.find('option').each(function () {
-            var $Attribute = $(this);
-            $('#SearchInsert label').each(function () {
-                if ($(this).attr('id') === 'Label' + $Attribute.attr('value')) {
-                    $Attribute.remove();
-                }
-            });
-        });
-
-        // replace selection with original selection
-        $('#Attribute').replaceWith($AttributeClone);
-
-        return true;
     };
 
     /**

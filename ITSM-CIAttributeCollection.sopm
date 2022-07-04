@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <otobo_package version="1.1">
     <Name>ITSM-CIAttributeCollection</Name>
-    <Version>10.0.4</Version>
+    <Version>10.0.5</Version>
     <Vendor>Perl-Services.de (original vendor: c.a.p.e. IT GmbH)</Vendor>
     <URL>https://www.perl-services.de/</URL>
     <License>GNU AFFERO GENERAL PUBLIC LICENSE Version 3, November 2007</License>
     <Description Lang="en">ITSM-CIAttributeCollection - provides additional CI-attributes.</Description>
     <Framework>10.0.x</Framework>
+    <Framework>10.1.x</Framework>
     <IntroInstall Lang="en" Title="Install Information" Type="pre">
         &lt;br/&gt;
         &lt;strong&gt;WELCOME&lt;/strong&gt;&lt;br/&gt;

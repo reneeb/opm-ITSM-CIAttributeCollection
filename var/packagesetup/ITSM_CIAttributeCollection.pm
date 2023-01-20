@@ -1,6 +1,6 @@
 # --
 # Copyright (C) 2006-2016 c.a.p.e. IT GmbH, http://www.cape-it.de
-# Copyright (C) 2018 Perl-Services.de, http://perl-services.de
+# Copyright (C) 2018 - 2023 Perl-Services.de, https://www.perl-services.de
 #
 # written/edited by
 # * Anna(dot)Litvinova(at)cape(dash)it(dot)de

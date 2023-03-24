@@ -202,6 +202,10 @@ sub ExportValuePrepare {
 
         if ( $VersionData && ref $VersionData eq 'HASH' ) {
 
+            if ( exists $VersionData->{$SearchAttr} && length $VersionData->{$SearchAttr} ) {
+                return $VersionData->{$SearchAttr};
+            }
+
             # get ConfigItem class ID
             my $ReferencedCIClassID = "";
             if (

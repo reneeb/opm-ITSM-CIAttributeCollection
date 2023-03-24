@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <otobo_package version="1.1">
     <Name>ITSM-CIAttributeCollection</Name>
-    <Version>10.0.5</Version>
+    <Version>10.0.6</Version>
     <Vendor>Perl-Services.de (original vendor: c.a.p.e. IT GmbH)</Vendor>
     <URL>https://www.perl-services.de/</URL>
     <License>GNU AFFERO GENERAL PUBLIC LICENSE Version 3, November 2007</License>
